@@ -41,6 +41,7 @@ public class Item extends AbstractMongoEntity<ObjectId>{
 
     private final Map<String, String> metadata;
 
+    private final String category;
     /**
      * Creates item object.
      * 
@@ -55,13 +56,15 @@ public class Item extends AbstractMongoEntity<ObjectId>{
             @JsonProperty("price")float price, //
             @JsonProperty("discount")float discount, //
             @JsonProperty("description")String description, //
-            @JsonProperty("metadata")Map<String, String> metadata) {
+            @JsonProperty("metadata")Map<String, String> metadata, //
+            @JsonProperty("category")String category) {
         super();
         this.name = name;
         this.price = price;
         this.discount = discount;
         this.description = description;
         this.metadata = metadata;
+        this.category = category;
     }
 
     /**
@@ -98,4 +101,8 @@ public class Item extends AbstractMongoEntity<ObjectId>{
     public final Map<String, String> getMetadata() {
         return metadata;
     }
+
+	public String getCategory() {
+		return category;
+	}
 }
